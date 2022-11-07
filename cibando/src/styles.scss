@@ -4,3 +4,29 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+ngb-carousel.carousel.slide{
+  margin-top: -19px;
+  margin-bottom: 20px;
+
+  .carousel-caption {
+    top:26rem;
+
+    h3 {
+      font-family: 'Homemade Apple', cursive;
+      font-size: 40px;
+      text-shadow: black 2px 3px 3px;
+    }
+  }
+
+  .carousel-control-prev, .carousel-control-next{
+    opacity: 1!important;
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
