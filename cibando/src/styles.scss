@@ -5,6 +5,33 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+footer{
+  height: 100px;
+  width: 100%;
+  background-color: #8e210b!important;
+
+}
+
+#main-container{
+  padding: 15px;
+
+  p{
+    text-align: justify;
+    font-size: 13px;
+  }
+}
+
+.testo-evidenziato{
+  background-color: yellow;
+  width: 400px;
+}
+//INIZIO stili per Bootstrap Carousel
+.una-immagine {
+  margin-top: -19px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
 ngb-carousel.carousel.slide{
   margin-top: -19px;
   margin-bottom: 20px;
@@ -16,6 +43,11 @@ ngb-carousel.carousel.slide{
       font-family: 'Homemade Apple', cursive;
       font-size: 40px;
       text-shadow: black 2px 3px 3px;
+    }
+    h2{
+      font-size: 16px;
+      text-shadow: black 2px 2px 2px;
+      font-weight: lighter;
     }
   }
 

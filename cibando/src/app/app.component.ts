@@ -15,14 +15,9 @@ export class AppComponent {
   iconaScheda = faNewspaper;//ricette
   iconaMail = faMailBulk;
   iconaRegistrato = faRegistered;
-  images = [
-    {id: 1,
-    label: "Spaghetti al sugo"},
-    {id: 2,
-    label: "tagliata di manzo"},
-    {id: 3,
-    label: "tiramisu classico"}
-  ];
+  evidenziato= false;
 
-  percorso= '../assets/images/carousel-';
+  onEvidenziazione(){
+    this.evidenziato=!this.evidenziato;
+  }
 }
