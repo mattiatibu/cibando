@@ -5,7 +5,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
-  styleUrls: ['./recipes.component.css']
+  styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit {
   ricette:Recipe[] = [];
@@ -13,6 +13,8 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+    console.log('sei entrato nelle ricette');
+
     this.recipeService.getRecipes().subscribe({
       next: (res) => {
         this.ricette=res;
