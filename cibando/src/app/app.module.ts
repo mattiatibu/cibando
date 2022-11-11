@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
+import { DetailsComponent } from './components/recipes/details/detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
