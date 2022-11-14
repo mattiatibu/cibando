@@ -10,21 +10,21 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class RecipesListComponent implements OnInit {
 
   titoloRicevuto:string ="";
-  ricette:Recipe[] = [];
+  //ricette:Recipe[] = [];
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(/*private recipeService: RecipeService*/) { }
 
   ngOnInit(): void {
     console.log('sei entrato nelle ricette');
 
-    this.recipeService.getRecipes().subscribe({
+    /*this.recipeService.getRecipes().subscribe({
       next: (res) => {
         this.ricette=res;
       },
       error: (e) => {
         console.error(e);
       }
-    })
+    })*/
   }
 
   riceviTitolo(e:any){

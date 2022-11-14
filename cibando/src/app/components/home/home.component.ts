@@ -10,14 +10,14 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class HomeComponent implements OnInit, OnDestroy {
   evidenziato= false;
 
-  ricette:Recipe[] = [];
+  //ricette:Recipe[] = [];
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     console.log('sei entrato nella home');
 
-    this.recipeService.getRecipes().subscribe({
+    /*this.recipeService.getRecipes().subscribe({
       next: (res) => {
         this.ricette = res;
         this.ricette = this.ricette.sort((a,b) => b._id - a._id).slice(0,4);
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       error: (e) => {
         console.error(e);
       }
-    })
+    })*/
   }
 
   onEvidenziazione(){
