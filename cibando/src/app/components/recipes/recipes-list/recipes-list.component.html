@@ -1,2 +1,8 @@
 <h2>le nostre ricette</h2>
-<app-recipe-card [recipes]="ricette"></app-recipe-card>
+<ng-template #vuoto>
+  <div class="nulla">{{titoloRicevuto}}</div>
+</ng-template>
+<div *ngIf="titoloRicevuto; else vuoto" class="messaggio">
+  Hai cliccato la ricetta: <strong>{{titoloRicevuto}}</strong>
+</div>
+<app-recipe-card [recipes]="ricette" (messaggio)="riceviTitolo($event)"></app-recipe-card>

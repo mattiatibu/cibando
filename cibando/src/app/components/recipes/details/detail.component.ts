@@ -12,6 +12,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 export class DetailsComponent implements OnInit {
 
   ricetta: Recipe;
+  percorsoDifficolta:string = "../../../../assets/images/difficolta-"
 
   constructor(
     private recipeService: RecipeService,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
@@ -10,9 +10,16 @@ export class RecipeCardComponent implements OnInit {
 
   @Input() recipes:Recipe[];
 
+  @Output() messaggio = new EventEmitter();
+  percorsoDifficolta:string = "../../../../assets/images/difficolta-"
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  inviaTitolo(titolo:string){
+    this.messaggio.emit(titolo);
+
+  }
 }

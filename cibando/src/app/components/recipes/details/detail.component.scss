@@ -3,9 +3,7 @@
   height:100vh;
   margin-top: -19px;
 
-  .detail{
 
-  }
   .detail-body{
     margin-left: 1.5%;
     margin-right: 1.5%;
@@ -13,6 +11,8 @@
   }
 
   .detail-image{
+    margin-left: -10px;
+    margin-right: -10px;
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -32,6 +32,16 @@
 
   .difficulty-title{
     font-weight: bold;
+  }
+  .difficolta{
+    width: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .detail-date{
+    margin-top: 50px;
+    text-align: right;
   }
 
 }
