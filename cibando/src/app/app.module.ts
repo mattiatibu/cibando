@@ -1,6 +1,7 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailsComponent } from './components/recipes/details/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { ErroreComponent } from './shared/errore/errore.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 
 @NgModule({
@@ -27,13 +29,16 @@ import { ErroreComponent } from './shared/errore/errore.component';
     RecipeCardComponent,
     DetailsComponent,
     RecipesListComponent,
-    ErroreComponent
+    ErroreComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { RegistrationComponent } from './user/registration/registration.component';
 import { ErroreComponent } from './shared/errore/errore.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'dettaglio/:title/:_id', component:DetailsComponent},
     { path: '', pathMatch: 'full',component:RecipesListComponent},
   ]},
+  { path: 'registrazione', component:RegistrationComponent},
   { path: 'errore', component: ErroreComponent},
   { path: '**', redirectTo: 'home'}
 ];
