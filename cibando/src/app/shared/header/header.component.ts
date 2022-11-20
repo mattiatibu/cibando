@@ -3,6 +3,7 @@ import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { faHouzz } from '@fortawesome/free-brands-svg-icons';
 import { faRegistered } from '@fortawesome/free-solid-svg-icons';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-header',
@@ -15,10 +16,17 @@ export class HeaderComponent implements OnInit {
   iconaScheda = faNewspaper;//ricette
   iconaMail = faMailBulk;
   iconaRegistrato = faRegistered;
+  isCollapsed = true;
+  testo: string;
 
-  constructor() { }
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
   }
 
+  cerca(){
+    const testo = this.testo;
+
+  }
 }

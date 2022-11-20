@@ -33,3 +33,18 @@
     <app-recipe-card [pagina]="'home'"></app-recipe-card>
   </div>
 </div>
+
+
+<!-- MODALE DELLA REGISTRAZIONE-->
+<ng-template [ngIf]="nome">
+  <div>
+    <div id="dati-utente">
+      <h2>Grazie {{nome}} per esserti registrato</h2>
+      <ul>
+        <li>Nome: <strong>{{nome}}</strong></li>
+        <li>email: <strong>{{email}}</strong></li>
+      </ul>
+      <button class="btn btn-primary" (click)="closeModal()">chiudi</button>
+    </div>
+  </div>
+</ng-template>

@@ -2,6 +2,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PasswordModule } from "primeng/password";
+import { DividerModule } from "primeng/divider";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,7 @@ import { DetailsComponent } from './components/recipes/details/detail.component'
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { ErroreComponent } from './shared/errore/errore.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 
 @NgModule({
@@ -30,7 +34,8 @@ import { RegistrationComponent } from './user/registration/registration.componen
     DetailsComponent,
     RecipesListComponent,
     ErroreComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,10 @@ import { RegistrationComponent } from './user/registration/registration.componen
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DividerModule,
+    PasswordModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

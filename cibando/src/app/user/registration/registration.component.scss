@@ -4,8 +4,10 @@
 .register-image{
   //display: flex;
   height: 100%;
-  width: 100%;
+  width: 103%;
   //float:left;
+  background-size: cover;
+  background-position: center;
   position: relative;
   //margin-right: 20%;
 }
@@ -32,11 +34,11 @@
   border-color: black;
 }
 .rounded{
-  border-radius: 4rem !important;
+  border-radius: 1rem !important;
 }
 .border{
   border-color:black !important;
-  border-width: 3px !important;
+  border-width: 1px !important;
 }
 .titolo{
   text-align: center;
@@ -62,9 +64,13 @@ input.ng-valid{
 
 .btn.btn-primary{
   border-radius:1.5rem !important;
+  color: #fff;
+  border-color: #8e210b;
+  background-color: #8e210b;
 }
 
 .is-danger{
+  float: right;
   font-size: 11px;
   color:red;
   font-weight: bold;

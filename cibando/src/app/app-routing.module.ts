@@ -1,3 +1,4 @@
+import { ContactsComponent } from './components/contacts/contacts.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { ErroreComponent } from './shared/errore/errore.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: '', pathMatch: 'full',component:RecipesListComponent},
   ]},
   { path: 'registrazione', component:RegistrationComponent},
+  { path: 'contatti', component:ContactsComponent},
   { path: 'errore', component: ErroreComponent},
   { path: '**', redirectTo: 'home'}
 ];

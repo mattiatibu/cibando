@@ -32,7 +32,7 @@
 </div>-->
 
 <div class="registrazione-container">
-  <div class="contenitore-colonne border rounded">
+  <div class="contenitore-colonne border rounded row">
     <div class="form-container col-6">
       <div class="titolo"><h1>Registrazione</h1></div>
       <form class="col-6" [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -45,18 +45,21 @@
         <div>
           <input type="text" id="email" name="email" placeholder="email" class="form-control" formControlName="email">
           <label for="email" class="form-label">La tua email</label>
-          <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">Il campo email è scritto male</p>
-          <p class="help is-danger" *ngIf="!form.get('email').valid && form.get('email').touched">Il campo è obbligatorio</p>
+          <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">Il campo email è scritto in modo errato</p>
+          <p class="help is-danger" *ngIf="form.get('email').value ==='' && form.get('email').touched">Il campo è obbligatorio</p>
         </div>
         <div >
-          <input type="password" name="password" placeholder="password" class="form-control" formControlName="password">
+          <!--<input type="password" name="password" placeholder="password" class="form-control" formControlName="password">-->
+          <p-password [toggleMask]="true" class="form-control" formControlName="password" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
           <label for="password" class="form-label">Password</label>
+          <p class="help is-danger" *ngIf="form.controls['password'].hasError('pattern')">Il campo password deve contenere 1 maiuscola, 1 minuscola, 1 carattere</p>
           <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">Il campo è obbligatorio</p>
 
         </div>
         <div >
           <input type="password" name="ripetiPassword" class="form-control" formControlName="ripetiPassword" >
           <label for="ripetiPassword" class="form-label">Ripeti password</label>
+          <p class="help is-danger" *ngIf="convalidaPassword">la passwond è diversa</p>
           <p class="help is-danger" *ngIf="!form.get('ripetiPassword').valid && form.get('ripetiPassword').touched">Il campo è obbligatorio</p>
 
         </div>
