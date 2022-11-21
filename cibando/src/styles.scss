@@ -74,3 +74,43 @@ ngb-carousel.carousel.slide{
 .p-password-input{
   width: 100%!important;
 }
+
+//paginazione
+
+.container-pagination{
+  display: block;
+  clear: both;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.testo-ricette-totali
+  {
+    margin-bottom: 20px!important;
+  }
+
+  .page-link.active, .active > .page-link{
+    background-color: #8e210b;
+    border:solid #8e210b;
+    color: white!important;
+  }
+
+  .page-item:not(:first-child) .page-link{
+    color: #8e210b;
+  }
+
+.disabled{
+    color: #8e210b!important;
+    a{
+      color: #8e210b!important
+    }
+  }
+
+  .navbar-toggler{
+    margin-right: 20px;
+  }
+

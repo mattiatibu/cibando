@@ -1,11 +1,13 @@
 
 .container-cards {
-  display: block;
-  //float: left;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
   margin-bottom: 20px;
-  height: 100vh;
 
   .card {
+    display: block;
     width: 23%;
     margin-left: 1.5%;
     float:left;
