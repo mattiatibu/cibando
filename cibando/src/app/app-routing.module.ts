@@ -1,3 +1,4 @@
+import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { ErroreComponent } from './shared/errore/errore.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   ]},
   { path: 'registrazione', component:RegistrationComponent},
   { path: 'contatti', component:ContactsComponent},
+  { path: 'nuova-ricetta', component:NuovaRicettaComponent},
   { path: 'errore', component: ErroreComponent},
   { path: '**', redirectTo: 'home'}
 ];

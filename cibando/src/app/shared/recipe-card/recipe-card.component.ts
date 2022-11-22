@@ -1,7 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
-
+import { map,filter } from 'rxjs'
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
@@ -21,10 +22,26 @@ export class RecipeCardComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) { }
 
+  ricette$: Observable<Recipe[]>; //$ convenzione per var asincrone
+  totRicette: Recipe[]=[];
+
   ngOnInit(): void {
+    if(this.pagina =='home'){
+      this.ricette$= this.recipeService.getRecipes().pipe(//pipe di rxjs
+            map(res=> res.filter(ricetteFiltrate => ricetteFiltrate.difficulty <= 5 )),
+            map(res=> res.slice(0,4)),
+            map( res=> this.totRicette=res)
+          )
+    }else{
+      this.ricette$= this.recipeService.getRecipes().pipe(//pipe di rxjs
+            map(res=> res.filter(ricetteFiltrate => ricetteFiltrate.difficulty <= 5 )),
+            map( res=> this.totRicette=res)
+          )
+    }
+
     console.log('sei entrato nella home');
 
-    this.recipeService.getRecipes().subscribe({
+    /*this.recipeService.getRecipes().subscribe({
       next: (res) => {
         this.ricette = res;
         if(this.pagina==='home'){
@@ -36,7 +53,7 @@ export class RecipeCardComponent implements OnInit {
       error: (e) => {
         console.error(e);
       }
-    })
+    })*/
   }
 
   inviaTitolo(titolo:string){

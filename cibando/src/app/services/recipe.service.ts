@@ -1,5 +1,4 @@
 import { Recipe } from './../models/recipe.model';
-import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RECIPES } from '../mocks/recipes.mock';
 import { Observable, of } from 'rxjs';
@@ -14,16 +13,32 @@ export class RecipeService {
   constructor(private http:HttpClient) { }
 
   //prendo tutte le ricette
-  getRecipes():Observable<Recipe[]> {
+  //getRecipes():Observable<Recipe[]> {
     //return of (RECIPES);
-    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
+    //return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
     //return this.http.get.Recipe[]=(this.apiBaseUrl+'/robascritta/'+this.id);
 
+  //}
+
+  getRecipes(){
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
   }
 
   getRecipe(id:string):Observable<Recipe>{
     //const recipe = RECIPES.find(recipe => recipe._id === id);
     //return of (recipe)
     return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`);
+  }
+
+  postRecipe(form:Recipe):Observable<Object>{
+    const reqBody={
+      "title": form.title,
+      "description": form.description,
+      "image": form.image,
+      "difficulty": form.difficulty,
+      "published": form.published
+    }
+    return this.http.post(`${this.apiBaseUrl}/`,reqBody);
+
   }
 }

@@ -75,3 +75,29 @@ input.ng-valid{
   color:red;
   font-weight: bold;
 }
+
+
+
+
+  @media only screen and (min-width: 0px) and (max-width: 480px){
+
+    .registrazione-container{
+      .contenitore-colonne{
+        display: flex;
+        flex-direction: column;
+        form{
+          width: 100%;
+        }
+        .register-image{
+          height:100px;
+          border-radius: 0%;
+          background-size: 200px;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-bottom: 20px;
+        }
+      }
+
+      }
+
+  }

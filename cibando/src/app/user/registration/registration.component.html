@@ -37,7 +37,7 @@
       <div class="titolo"><h1>Registrazione</h1></div>
       <form class="col-6" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div>
-          <input type="text" id="name" name="name" placeholder="scrivi il tuo nome" class="form-control" formControlName="name" >
+          <input type="text" id="name" name="name" placeholder="scrivi il tuo nome" class="form-control" formControlName="name" appChangeColor>
           <label for="nome" class="form-label">Il tuo nome</label>
           <p class="help is-danger" *ngIf="form.controls['name'].hasError('minlength')">Il campo è corto</p>
           <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo è obbligatorio</p>
