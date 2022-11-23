@@ -24,9 +24,49 @@ header{
     font-size: 25px;
     font-weight: 900;
     margin-right: 45px;
-}
+  }
+  .nav-link{
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+  }
 
+  .nav-item.accedi{
+    margin-left: 35px;
+  }
+  .user{
+    margin-left: 35px;
+    color:white;
+    margin-top: 13px;
+    .name{
+      margin-right: 10px;
+      margin-left: 5px;
+    }
 
+    a{
+      color: white!important;
+      margin-left: 5px;
+      text-decoration: none;
+    }
+
+    .esci{
+      background-color: white;
+      color:#8e210b!important;
+      display: flex;
+      float: right;
+      padding: 7px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      top: -8px;
+      left:18px;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+
+    }
+  }
 #container-search{
   display: flex;
   margin-left: 45%;

@@ -1,43 +1,58 @@
 <div class="nuova-ricetta-container">
-  <div class="colonne-container">
-    <div class="form-container">
-      <div class="titolo">
+  <div class="colonne-container border rounded row" >
+    <div class="form-container " >
+      <h2 class="titolo">Nuova Ricetta </h2>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div>
             <input type="text" id="title" name="title" placeholder="scrivi il nome della ricetta" class="form-control" formControlName="title" >
-            <label for="title" class="form-label">Nome ricetta</label>
+            <label for="title" class="form-label">Titolo</label>
             <p class="help is-danger" *ngIf="!form.get('title').valid && form.get('title').touched">Il campo è obbligatorio</p>
           </div>
           <div>
             <input type="text" id="description" name="description" placeholder="descrizione ricetta" class="form-control" formControlName="description" >
-            <label for="description" class="form-label">Il tuo nome</label>
+            <label for="description" class="form-label">Descrizione</label>
             <p class="help is-danger" *ngIf="!form.get('description').valid && form.get('description').touched">Il campo è obbligatorio</p>
           </div>
           <div>
             <input type="text" id="image" name="image" placeholder="immagine ricetta" class="form-control" formControlName="image" >
-            <label for="image" class="form-label">immagine ricetta</label>
+            <label for="image" class="form-label">Immagine</label>
             <p class="help is-danger" *ngIf="!form.get('image').valid && form.get('image').touched">Il campo è obbligatorio</p>
           </div>
           <div>
             <input type="text" id="difficulty" name="difficulty" placeholder="difficoltà ricetta" class="form-control" formControlName="difficulty" >
-            <label for="difficulty" class="form-label">difficoltà ricetta</label>
+            <label for="difficulty" class="form-label">Difficoltà </label>
             <p class="help is-danger" *ngIf="!form.get('difficulty').valid && form.get('difficulty').touched">Il campo è obbligatorio</p>
-          </div>
-          <div>
-            <input type="date" id="dataPubblicazione" name="dataPubblicazione" placeholder="scrivi la data di pubblicazione" class="form-control" formControlName="dataPubblicazione" >
-            <label for="dataPubblicazione" class="form-label">difficoltà ricetta</label>
-            <p class="help is-danger" *ngIf="!form.get('dataPubblicazione').valid && form.get('dataPubblicazione').touched">Il campo è obbligatorio</p>
           </div>
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="pubblica" formControlName="pubblica">
             <label class="form-check-label" for="pubblica">Pubblicare adesso?</label>
           </div>
-          <div class="registrati">
+          <div class="inserisci-ricetta">
             <p class="help correct"*ngIf="form.valid" >il from è corretto</p>
-            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Registrati</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Inserisci</button>
           </div>
         </form>
-      </div>
     </div>
   </div>
+  <ng-template [ngIf]="submitted">
+    <div id="modale-ricetta">
+      <div id="chiusura">
+        <button class="btn btn-primary" (click)="closeModal()">X</button>
+      </div>
+      <h2>Congratulazioni la nuova ricetta è stata inserita</h2>
+      <div id="dati-ricetta">
+        <div class="immagine"[ngStyle]="{'background-image': 'url('+ form.value.image + ')'}"></div>
+        <div class="testo">
+          <h3>{{form.value.title}}</h3>
+          <p>{{form.value.description}}</p>
+          <div>
+            <img [src]="percorsoDifficolta + form.value.difficulty + '.png'" class="difficolta" alt="difficoltà">
+          </div>
+        </div>
+      </div>
+      <div id="bottone">
+        <button class="btn btn-primary" (click)="inserireAltro()">nuova</button>
+      </div>
+    </div>
+  </ng-template>
 </div>

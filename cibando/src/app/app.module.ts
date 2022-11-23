@@ -6,6 +6,7 @@ import { PasswordModule } from "primeng/password";
 import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
+import {ToastModule} from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
+import { LoginComponent } from './user/login/login.component';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { ChangeColorDirective } from './directives/change-color.directive';
     ContactsComponent,
     NuovaRicettaComponent,
     ChangeColorDirective,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { ChangeColorDirective } from './directives/change-color.directive';
     DividerModule,
     PasswordModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

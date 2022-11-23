@@ -34,6 +34,11 @@ export class RegistrationComponent implements OnInit {
     console.log(this.form.value);
     const utente={ nome: this.form.value.name, email: this.form.value.email};
     this.userService.datiUtente.next(utente);
+    this.userService.nuovoUtente(this.form.value).subscribe({
+      next: (res)=> {
+        console.log(res);
+      },error:(err)=> console.log(err)
+    })
     this.router.navigate(['home']);
   }
 /*

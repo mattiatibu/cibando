@@ -4,6 +4,5 @@ export interface Recipe{
   description:string;
   image:string;
   difficulty:number;
-  date:string;
   published:boolean;
 }

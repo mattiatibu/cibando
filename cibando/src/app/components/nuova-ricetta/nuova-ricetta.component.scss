@@ -1,0 +1,114 @@
+
+#modale-ricetta{
+  position: absolute;
+  top: 35%;
+  width: 60%;
+  background-color: white;
+  margin-left: 20%;
+  padding: 36px;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 1px;
+
+  .immagine{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .testo{
+    font-size: 16px;
+  }
+
+  .difficolta{
+    height: 30px;
+  }
+  #bottone{
+    display: flex;
+    justify-content: center;
+  }
+  #chiusura{
+    display: flex;
+    justify-content: right;
+  }
+}
+
+.nuova-ricetta-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .colonne-container{
+    overflow: hidden;
+    display:flex;
+    width: 80%;
+    position: relative;
+    left:10%;
+    justify-content: center;
+    border-color: black;
+  }
+  .titolo{
+    text-align: center;
+    color:#8e210b;
+    margin-bottom:10px;
+    width:80%;
+    margin-top:10px;
+  }
+
+  input.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
+
+  input.ng-invalid.ng-dirty{
+    border: 1px solid yellow;
+  }
+
+  input.ng-valid{
+    border: 1px solid green;
+  }
+
+  .registrati{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .btn.btn-primary{
+    border-radius:1.5rem !important;
+    color: #fff;
+    border-color: #8e210b;
+    background-color: #8e210b;
+  }
+
+  .is-danger{
+    float: right;
+    font-size: 11px;
+    color:red;
+    font-weight: bold;
+  }
+
+  .inserisci-ricetta{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
+.rounded{
+  border-radius: 1rem !important;
+}
+.border{
+  border-color:black !important;
+  border-width: 1px !important;
+}
+
+

@@ -30,15 +30,8 @@ export class RecipeService {
     return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`);
   }
 
-  postRecipe(form:Recipe):Observable<Object>{
-    const reqBody={
-      "title": form.title,
-      "description": form.description,
-      "image": form.image,
-      "difficulty": form.difficulty,
-      "published": form.published
-    }
-    return this.http.post(`${this.apiBaseUrl}/`,reqBody);
+  postRecipe(form:any):Observable<any>{
+    return this.http.post(`${this.apiBaseUrl}/`,form);
 
   }
 }

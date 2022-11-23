@@ -1,3 +1,4 @@
+import { LoginComponent } from './user/login/login.component';
 import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { RegistrationComponent } from './user/registration/registration.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'contatti', component:ContactsComponent},
   { path: 'nuova-ricetta', component:NuovaRicettaComponent},
   { path: 'errore', component: ErroreComponent},
+  { path: 'login', component:LoginComponent},
   { path: '**', redirectTo: 'home'}
 ];
 //{ path: 'ricette', component: RecipesComponent},

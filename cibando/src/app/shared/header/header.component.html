@@ -21,14 +21,21 @@
           <a class="nav-link" routerLink="contatti">
             <fa-icon [icon]="iconaMail"></fa-icon>Contatti</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="registrazione">
-            <fa-icon [icon]="iconaRegistrato"></fa-icon>Registrati</a>
+        <li class="nav-item accedi" *ngIf="!authService.isLogged()">
+          <a class="nav-link" routerLink="login">
+            <i class="pi pi-user"></i>Accedi</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item user" *ngIf="authService.isLogged()">
+            <i class="pi pi-user"></i><span class="name"> Ciao {{user.name}}</span>
+            <span *ngIf="user.role==='admin'" class="nuova-ricetta"> <i class="pi pi-plus"></i><a routerLink="nuova-ricetta">Nuova ricetta</a>
+
+          </span>
+            <a href="#" class="esci" (click)="logout()">ESCI</a>
+        </li>
+        <!--<li class="nav-item">
           <a class="nav-link" routerLink="nuova-ricetta">
             <fa-icon [icon]="iconaScheda"></fa-icon>Inserisci Ricetta</a>
-        </li>
+        </li>-->
       </ul>
       <div id="container-search">
         <input type="text" name="cerca" [(ngModel)]="testo" class="form-control cerca">
