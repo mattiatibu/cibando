@@ -9,7 +9,7 @@
             <p class="help is-danger" *ngIf="!form.get('title').valid && form.get('title').touched">Il campo è obbligatorio</p>
           </div>
           <div>
-            <input type="text" id="description" name="description" placeholder="descrizione ricetta" class="form-control" formControlName="description" >
+            <ckeditor [editor]="editor" [config]="editorConfig" id="description" name="description" placeholder="descrizione ricetta" class="form-control description" formControlName="description" ></ckeditor>
             <label for="description" class="form-label">Descrizione</label>
             <p class="help is-danger" *ngIf="!form.get('description').valid && form.get('description').touched">Il campo è obbligatorio</p>
           </div>
@@ -28,16 +28,15 @@
             <label class="form-check-label" for="pubblica">Pubblicare adesso?</label>
           </div>
           <div class="inserisci-ricetta">
-            <p class="help correct"*ngIf="form.valid" >il from è corretto</p>
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Inserisci</button>
           </div>
         </form>
     </div>
   </div>
-  <ng-template [ngIf]="submitted">
-    <div id="modale-ricetta">
+  <!--<ng-template [ngIf]="submitted">
+    <div class="modale-ricetta">
       <div id="chiusura">
-        <button class="btn btn-primary" (click)="closeModal()">X</button>
+        <button class="btn btn-primary" (click)="closeModal()"><fa-icon [icon]="iconaChiudi"></fa-icon></button>
       </div>
       <h2>Congratulazioni la nuova ricetta è stata inserita</h2>
       <div id="dati-ricetta">
@@ -51,8 +50,8 @@
         </div>
       </div>
       <div id="bottone">
-        <button class="btn btn-primary" (click)="inserireAltro()">nuova</button>
+        <button class="btn btn-primary" (click)="inserireAltro()">Nuova</button>
       </div>
     </div>
-  </ng-template>
+  </ng-template>-->
 </div>

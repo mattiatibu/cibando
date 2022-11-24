@@ -1,0 +1,21 @@
+<div class="container-inserita">
+  <div class="modale-ricetta">
+    <div id="chiusura">
+      <button class="btn btn-primary" (click)="closeModal()"><fa-icon [icon]="iconaChiudi"></fa-icon></button>
+    </div>
+    <h2>Congratulazioni la nuova ricetta è stata inserita</h2>
+    <div id="dati-ricetta">
+      <div class="immagine"[ngStyle]="{'background-image': 'url('+ image + ')'}"></div>
+      <div class="testo">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <div>
+          <img [src]="percorsoDifficolta + difficulty + '.png'" class="difficolta" alt="difficoltà">
+        </div>
+      </div>
+    </div>
+    <div id="bottone">
+      <button class="btn btn-primary" (click)="inserireAltro()">Nuova</button>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,8 @@ import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import {ToastModule} from 'primeng/toast';
+import {PaginatorModule} from 'primeng/paginator';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +27,10 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { LoginComponent } from './user/login/login.component';
+import { MostraInseritaComponent } from './components/mostra-inserita/mostra-inserita.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { StylesDirective } from './shared/styles.directive';
+import { VideoComponent } from './components/video/video.component';
 
 
 @NgModule({
@@ -44,6 +50,10 @@ import { LoginComponent } from './user/login/login.component';
     NuovaRicettaComponent,
     ChangeColorDirective,
     LoginComponent,
+    MostraInseritaComponent,
+    ProfileComponent,
+    StylesDirective,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +66,9 @@ import { LoginComponent } from './user/login/login.component';
     PasswordModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    PaginatorModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

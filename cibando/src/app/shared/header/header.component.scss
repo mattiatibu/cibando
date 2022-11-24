@@ -1,5 +1,6 @@
 header{
   //display: flex;
+  overflow: hidden;
   background-color: #8e210b!important;
   padding-left: 20px;
   margin-bottom: 20px;
@@ -35,7 +36,8 @@ header{
     margin-left: 35px;
   }
   .user{
-    margin-left: 35px;
+    display: flex;
+    margin-left: 15px;
     color:white;
     margin-top: 13px;
     .name{
@@ -47,6 +49,7 @@ header{
       color: white!important;
       margin-left: 5px;
       text-decoration: none;
+      cursor: pointer!important;
     }
 
     .esci{

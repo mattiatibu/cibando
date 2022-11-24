@@ -1,3 +1,5 @@
+import { VideoComponent } from './components/video/video.component';
+import { MostraInseritaComponent } from './components/mostra-inserita/mostra-inserita.component';
 import { LoginComponent } from './user/login/login.component';
 import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -9,6 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { DetailsComponent } from './components/recipes/details/detail.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { LoggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   { path: '', redirectTo:'home', pathMatch: 'full'},
@@ -21,7 +25,10 @@ const routes: Routes = [
   { path: 'contatti', component:ContactsComponent},
   { path: 'nuova-ricetta', component:NuovaRicettaComponent},
   { path: 'errore', component: ErroreComponent},
+  { path: 'mostra-inserita', component:MostraInseritaComponent},
   { path: 'login', component:LoginComponent},
+  { path: 'profilo', component:ProfileComponent, canActivate: [LoggedInGuard]},
+  { path: 'video', component:VideoComponent, canActivate: [LoggedInGuard]},
   { path: '**', redirectTo: 'home'}
 ];
 //{ path: 'ricette', component: RecipesComponent},

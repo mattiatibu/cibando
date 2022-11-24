@@ -61,7 +61,6 @@ export class RecipeCardComponent implements OnInit {
 
   }
 
-//scoprire a cosa serve
   pagine(){
     let tot;
     if(this.ricette){
@@ -70,5 +69,9 @@ export class RecipeCardComponent implements OnInit {
     this.page=1;
     this.pagingNumber=0;
     this.pagingNumber= Math.ceil(this.ricette.length/this.ricettePerPagina/4);
+  }
+
+  paginate($event){
+
   }
 }

@@ -1,0 +1,50 @@
+
+.contatti{
+  margin-bottom: 10px;
+  overflow: hidden;
+  .titolo{
+    text-align: center;
+
+    //color:#8e210b;
+  }
+  .testo1{
+    text-align: justify;
+    margin-left: 1.5%;
+  }
+  .foto1{
+    overflow: hidden;
+    //float:left;
+    width: 47%;
+    //height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+  }
+  .testo2{
+    text-align: justify;
+  }
+  .foto2{
+    overflow: hidden;
+    margin-left: 1.5%;
+    width: 47%;
+    //height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .seguici{
+    margin-left: 1.5%;
+    display: flex;
+    align-items: center;
+    span{
+      font-weight: bold;
+    }
+    .icone{
+      font-size: 30px;
+      .social{
+        margin:10px;
+      }
+    }
+  }
+
+}

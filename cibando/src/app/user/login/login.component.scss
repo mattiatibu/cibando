@@ -1,5 +1,5 @@
 #contenitore{
-  height:70vh;
+  height:80vh;
   form{
   width: 30%;
   margin:auto;
@@ -7,6 +7,17 @@
 
   float:left;
   margin-left: 35%;
+}
+
+#registrati{
+  display: block;
+  position: relative;
+  clear: both;
+  margin: auto;
+  text-align: center;
+  a{
+    text-decoration: none;
+  }
 }
 }
 

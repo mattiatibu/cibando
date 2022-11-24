@@ -1,7 +1,6 @@
-
-#modale-ricetta{
+.modale-ricetta{
   position: absolute;
-  top: 35%;
+  top: 10%;
   width: 60%;
   background-color: white;
   margin-left: 20%;
@@ -35,6 +34,7 @@
 }
 
 .nuova-ricetta-container{
+  height: 80vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 5%;

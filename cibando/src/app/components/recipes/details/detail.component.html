@@ -2,7 +2,7 @@
     <div class="detail-image" [ngStyle]="{'background-image': 'url('+ ricetta.image + ')'}"></div>
     <div class="detail-body">
       <h5 class="detail-title">{{ricetta.title}}</h5>
-       <p class="detail-text">{{ricetta.description}}</p>
+       <p class="detail-text"><span [innerHTML]="ricetta.description"></span></p>
        <div class="detail-difficulty">
         <h6 class="difficulty-title">Difficoltà:</h6>
         <div class="row">

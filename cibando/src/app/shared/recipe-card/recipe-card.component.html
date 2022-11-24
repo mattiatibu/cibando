@@ -4,6 +4,8 @@
   </div>
   <ngb-pagination [collectionSize]="totRicette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
   </ngb-pagination>
+  <!--<p-paginator [rows]="ricettePerPagina" [totalRecords]="totRicette.length" (onPageChange)="paginate($event)"
+  [rowsPerPageOptions]="[2,4,8]" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>-->
 </div>
 <div class="container-cards">
   <div class="card"  *ngFor="let recipe of ricette$ |async | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">
@@ -11,7 +13,8 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
-      <p class="card-text">{{recipe.description | slice: 0:250}}...</p>
+      <!--<p class="card-text">{{recipe.description | slice: 0:250}}...</p>-->
+      <p class="card-text"><span [innerHTML]="recipe.description | slice: 0:250"></span></p>
       <div class="difficolta-card">
         <h6 class="difficulty-title">Difficoltà:</h6>
         <div class="row">
