@@ -112,6 +112,29 @@ exports.delete = (req, res) => {
       });
     });
 };
+// Find a Recipe usando il fulltext come fa google
+exports.findString = (req, res) => {
+
+  const testo = req.params.text;
+
+  Recipe.find(
+    { $text: { $search : testo } },
+    { score : { $meta: "textScore" } 
+  } 
+).sort( 
+  {  score: { $meta : 'textScore' } }
+    )
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found recipe with testo " + testo });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving recipe with testo=" + testo });
+    });
+};
 
 
 

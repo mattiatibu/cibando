@@ -44,8 +44,10 @@ export class HeaderComponent implements OnInit, DoCheck {
     this.router.navigate(['/login']);
   }
   cerca(){
-    const testo = this.testo;
-    //da completare
+    //const testo = this.testo;
+    console.log(this.testo);
+    this.recipeService.cerca.next(this.testo);
+    this.router.navigate['ricette/result/'];
   }
 
 }

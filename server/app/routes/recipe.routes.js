@@ -16,5 +16,8 @@ module.exports = app => {
     // Delete a Recipe with id
     router.delete("/:id", recipes.delete);
 
+    // Retrieve a single Recipe with text
+    router.get("/cerca/:text", recipes.findString);
+
     app.use('/api/recipes', router);
   };

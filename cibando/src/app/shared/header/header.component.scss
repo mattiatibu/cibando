@@ -33,7 +33,7 @@ header{
   }
 
   .nav-item.accedi{
-    margin-left: 35px;
+    margin-top: 5px;
   }
   .user{
     display: flex;
@@ -68,6 +68,10 @@ header{
       align-content: center;
       justify-content: center;
 
+    }
+
+    .nuova-ricetta{
+      display: flex;
     }
   }
 #container-search{

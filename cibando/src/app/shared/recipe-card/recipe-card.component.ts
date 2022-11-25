@@ -71,7 +71,9 @@ export class RecipeCardComponent implements OnInit {
     this.pagingNumber= Math.ceil(this.ricette.length/this.ricettePerPagina/4);
   }
 
-  paginate($event){
+  paginate(event){
+     event.page =event.page + 1;
+     this.page = event.page;
+ }
 
-  }
 }

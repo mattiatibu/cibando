@@ -1,3 +1,4 @@
+@import '../../../shared/styles/colori.scss';
 #contenitore{
   height:80vh;
   form{
@@ -7,6 +8,11 @@
 
   float:left;
   margin-left: 35%;
+
+  button.btn.btn-primary.btn-block.mb-4 {
+    background-color: $primary-color-1;
+    width: 100%;
+  }
 }
 
 #registrati{

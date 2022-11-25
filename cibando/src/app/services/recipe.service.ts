@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeService {
   apiBaseUrl="api/recipes";
   ricettaVoluta= new ReplaySubject();
+  cerca= new ReplaySubject();
   constructor(private http:HttpClient) { }
 
   //prendo tutte le ricette
@@ -33,5 +34,9 @@ export class RecipeService {
   postRecipe(form:any):Observable<any>{
     return this.http.post(`${this.apiBaseUrl}/`,form);
 
+  }
+  searchRecipes(text:string):Observable<Recipe[]>{
+    console.log(text);
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/cerca/${text}`);
   }
 }

@@ -115,7 +115,16 @@ ngb-carousel.carousel.slide{
   }
 
 .description .ck-editor__editable{
-  min-height: 250px!important;
+  min-height: 250px!important;//devo metterle entrambe uguali altrimenti non cambia l'altezza
   max-height: 250px!important;
 
+}
+
+i.pi.pi-user {
+  font-size: 25px;
+  margin-right: 5px;
+}
+i.pi.pi-plus {
+  font-size: 25px;
+  margin-right: 5px;
 }

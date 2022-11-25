@@ -1,4 +1,4 @@
-import { MostraInseritaComponent } from './../mostra-inserita/mostra-inserita.component';
+import { MostraInseritaComponent } from '../mostra-inserita/mostra-inserita.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';

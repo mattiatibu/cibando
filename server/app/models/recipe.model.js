@@ -11,7 +11,7 @@ module.exports = mongoose => {
           note: {type: String,required:false}
         },
         { timestamps: true }
-      )
+      ).index({title: 'text', description:'text'})
     );
     return Recipe;
   };

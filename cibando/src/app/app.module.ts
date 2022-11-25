@@ -22,15 +22,16 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailsComponent } from './components/recipes/details/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { ErroreComponent } from './shared/errore/errore.component';
-import { RegistrationComponent } from './user/registration/registration.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { NuovaRicettaComponent } from './components/nuova-ricetta/nuova-ricetta.component';
+import { NuovaRicettaComponent } from './components/recipes/nuova-ricetta/nuova-ricetta.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
-import { LoginComponent } from './user/login/login.component';
-import { MostraInseritaComponent } from './components/mostra-inserita/mostra-inserita.component';
-import { ProfileComponent } from './user/profile/profile.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { MostraInseritaComponent } from './components/recipes/mostra-inserita/mostra-inserita.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 import { StylesDirective } from './shared/styles.directive';
 import { VideoComponent } from './components/video/video.component';
+import { ResultComponent } from './components/recipes/result/result.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { VideoComponent } from './components/video/video.component';
     ProfileComponent,
     StylesDirective,
     VideoComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
