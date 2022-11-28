@@ -6,10 +6,12 @@
       <h5 class="card-title">{{recipe.title}}</h5>
       <!--<p class="card-text">{{recipe.description | slice: 0:250}}...</p>-->
       <p class="card-text"><span [innerHTML]="recipe.description | slice: 0:250"></span></p>
-      <a class="btn btn-primary" routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
-
+      <a class="btn btn-primary" routerLink="/ricette/recipes/dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
      <!--<a class="btn btn-primary" [routerLink]="'dettaglio/'+recipe.title+'/'+recipe._id">Visualizza2</a>-->
 
     </div>
   </div>
+</div>
+<div *ngIf="ricette.length == 0" class="not-found">
+   <div id="spiacenti"> siamo spiacenti ricetta non trovata</div>
 </div>

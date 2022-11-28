@@ -24,7 +24,8 @@ export class ResultComponent implements OnInit {
   onGetRecipes(): void {
     this.recipeService.cerca.subscribe(
      (res:any) => {
-        this.recipeService.searchRecipes(this.testo).subscribe({
+       let testo=res;
+        this.recipeService.searchRecipes(testo).subscribe({
           next:(res)=>{
             this.ricette=res;
           },

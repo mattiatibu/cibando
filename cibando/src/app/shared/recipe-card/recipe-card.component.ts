@@ -39,7 +39,6 @@ export class RecipeCardComponent implements OnInit {
           )
     }
 
-    console.log('sei entrato nella home');
 
     /*this.recipeService.getRecipes().subscribe({
       next: (res) => {

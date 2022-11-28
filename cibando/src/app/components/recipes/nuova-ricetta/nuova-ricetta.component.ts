@@ -64,10 +64,19 @@ editorConfig = {
   constructor(private recipeService:RecipeService, private router:Router) { }
 
   ngOnInit(): void {
+    /*this.form.patchValue(){
+      title:'qualcosa';
+    }*/
   }
   onSubmit(){
     console.log(this.form.value);
-
+    const ricetta={
+      title: this.form.value.title,
+      description:  this.form.value.description,
+      difficulty:  this.form.value.difficulty,
+      image:  this.form.value.image,
+    }
+    this.recipeService.ricettaVoluta.next(ricetta);
     this.recipeService.postRecipe(this.form.value).subscribe({
       next: (res) => {
         res = res;
@@ -79,17 +88,17 @@ editorConfig = {
     });
 
     //this.submitted=true;
-    this.inviaDatiRicetta();
-    this.router.navigate(['mostra-inserita']);
+    //this.inviaDatiRicetta();
+    this.router.navigate(['ricette/mostra-inserita']);
   }
 
-  inviaDatiRicetta(){
+  /*inviaDatiRicetta(){
     localStorage.setItem('title',this.form.value.title);
     localStorage.setItem('description',this.form.value.description);
     localStorage.setItem('image',this.form.value.image);
     localStorage.setItem('difficulty',this.form.value.difficulty);
 
-  }
+  }*/
   /*
   closeModal(){
     this.submitted=false;

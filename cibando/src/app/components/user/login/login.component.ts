@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
@@ -11,6 +11,8 @@ import { MessageService } from 'primeng/api';
   providers:[MessageService]
 })
 export class LoginComponent implements OnInit {
+  @Output() chiudi = new EventEmitter;
+  //@Input() esegui:boolean;
   loginError:string ='';
   user:any;
 
@@ -20,6 +22,7 @@ export class LoginComponent implements OnInit {
     private messageService:MessageService) { }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(credenziali:any){
@@ -32,6 +35,7 @@ export class LoginComponent implements OnInit {
 
             this.messageService.add({severity:'success', summary:'Successo', detail:'Login Effettuato con Successo'});
             //this.router.navigate(['home']);
+            this.chiudi.emit(true);
           }else{
             this.loginError = "email o password errati";
             this.messageService.add({severity:'error', summary:'Errore', detail:'email o password errati', life:2000});

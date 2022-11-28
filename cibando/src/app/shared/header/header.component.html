@@ -14,7 +14,7 @@
             <fa-icon [icon]="iconaHome"></fa-icon> Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="ricette">
+          <a class="nav-link" routerLink="ricette/recipes">
             <fa-icon [icon]="iconaScheda"></fa-icon>Ricette</a>
         </li>
         <li class="nav-item">
@@ -22,7 +22,7 @@
             <fa-icon [icon]="iconaMail"></fa-icon>Contatti</a>
         </li>
         <li class="nav-item accedi" *ngIf="!authService.isLogged()">
-          <a class="nav-link" routerLink="login">
+          <a class="nav-link" (click)="open(modaleDue,'accedi')">
             <i class="pi pi-user"></i>Accedi</a>
         </li>
       </ul>
@@ -31,14 +31,16 @@
             <i class="pi pi-user"></i><span class="name"> Ciao {{user.name}}</span>
         </li>
         <li class="nav-item user">
-          <span *ngIf="user.role==='admin'" class="nuova-ricetta"> <i class="pi pi-plus"></i><a routerLink="nuova-ricetta">Nuova ricetta</a>
+          <span *ngIf="user.role==='admin'" class="nuova-ricetta"> <i class="pi pi-plus"></i><a routerLink="ricette/nuova-ricetta">Nuova ricetta</a>
         </span>
         </li>
         <li class="nav-item user">
           <a href="#" class="nav-link profilo" routerLink="profilo">Profilo</a>
         </li>
         <li class="nav-item user">
-          <a href="#" class="esci" (click)="logout()">ESCI</a>
+          <button class="esci" (click)="open(modaleUno,'esci')">ESCI</button>
+          <button class="esci" (click)="open(modaleDue)">MODALE DUE</button>
+
         </li>
         <!--<li class="nav-item">
           <a class="nav-link" routerLink="nuova-ricetta">
@@ -54,3 +56,31 @@
     </div>
   </nav>
 </header>
+
+<ng-template #modaleUno let-modal>
+  <div class="modal-header">
+    HEADER <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    Sei sicuro di voler fare il logout
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="modal.dismiss()">ANNULLA</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()" ngbAutoFocus>AZIONE</button>
+  </div>
+</ng-template>
+
+
+<ng-template #modaleDue let-modal>
+  <div class="modal-header">
+    HEADER <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <app-login (chiudi)="chiudiModale($event)"></app-login>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="modal.dismiss()">ANNULLA</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()" ngbAutoFocus>ACCEDI</button>
+
+  </div>
+</ng-template>

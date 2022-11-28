@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-mostra-inserita',
@@ -16,28 +17,25 @@ export class MostraInseritaComponent implements OnInit {
   image:string;
   difficulty:number;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private recipeService:RecipeService) { }
 
   ngOnInit(): void {
     this.riceviDatiRicetta();
   }
 
   riceviDatiRicetta(){
-    this.title=localStorage.getItem('title');
-    this.description=localStorage.getItem('description');
-    this.image=localStorage.getItem('image');
-    this.difficulty=Number(localStorage.getItem('difficulty'));
-
-    localStorage.removeItem('title');
-    localStorage.removeItem('description');
-    localStorage.removeItem('image');
-    localStorage.removeItem('difficulty');
+    this.recipeService.ricettaVoluta.subscribe((res:any)=>{
+      this.title=res.title;
+      this.description=res.description;
+      this.image=res.image;
+      this.difficulty=res.difficulty;
+    })
   }
 
   closeModal(){
-    this.router.navigate(['ricette']);
+    this.router.navigate(['/ricette/recipes']);
   }
   inserireAltro(){
-    this.router.navigate(['nuova-ricetta']);
+    this.router.navigate(['ricette/nuova-ricetta']);
   }
 }
