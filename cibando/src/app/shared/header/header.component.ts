@@ -48,7 +48,7 @@ export class HeaderComponent implements OnInit, DoCheck {
     //const testo = this.testo;
     console.log("testo header"+this.testo);
     this.recipeService.cerca.next(this.testo);
-    this.router.navigate['/ricette/result/'];
+    this.router.navigate(['ricette/result']);
   }
 
   chiudiModale(e){

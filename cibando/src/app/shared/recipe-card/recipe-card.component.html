@@ -1,11 +1,15 @@
 <div class="container-pagination" *ngIf="pagina != 'home'">
+  <ng-content></ng-content>
   <div class="testo-ricette-totali">
    <strong>{{ricettePerPagina}}</strong> Ricette su un totale di <strong>{{totRicette.length}}</strong> <br> pagina corrente <strong>{{page}}</strong>
   </div>
   <!--<ngb-pagination [collectionSize]="totRicette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
   </ngb-pagination>-->
-  <p-paginator [rows]="ricettePerPagina" [totalRecords]="totRicette.length" (onPageChange)="paginate($event)"
-  [rowsPerPageOptions]="[2,4,8]" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>
+  <div>
+    <ng-content></ng-content>
+    <p-paginator [rows]="ricettePerPagina" [totalRecords]="totRicette.length" (onPageChange)="paginate($event)"
+    [rowsPerPageOptions]="[2,4,8]" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>
+  </div>
 </div>
 <div class="container-cards">
   <!--<div class="card"  *ngFor="let recipe of ricette$ |async | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">-->
@@ -33,6 +37,7 @@
 <div class="container-pagination" *ngIf="pagina != 'home'">
   <!--<ngb-pagination [collectionSize]="totRicette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
   </ngb-pagination>-->
+
   <p-paginator [rows]="ricettePerPagina" [totalRecords]="totRicette.length" (onPageChange)="paginate($event)"
   [rowsPerPageOptions]="[2,4,8]" (rowsPerPageOptionsChange)="ricettePerPagina"></p-paginator>
 </div>

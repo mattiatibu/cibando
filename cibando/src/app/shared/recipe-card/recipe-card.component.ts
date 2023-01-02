@@ -73,6 +73,7 @@ export class RecipeCardComponent implements OnInit {
   paginate(event){
      event.page =event.page + 1;
      this.page = event.page;
+     this.ricettePerPagina=event.rows;
  }
 
 }
